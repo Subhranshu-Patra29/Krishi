@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/matte_black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="🌾 Advanced Forecast Dashboard"
+            android:textSize="22sp"
+            android:textColor="@color/orange_500"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Use a vertical LinearLayout to ensure clean stacking -->
+        <LinearLayout
+            android:id="@+id/cardContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Soil Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#1B5E20"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="🌱 Soil Data"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/green"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tvSoilTemp"
+                        android:text="Surface Temp: -- °C"
+                        android:textSize="15sp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tvSoilDepthTemp"
+                        android:text="10cm Temp: -- °C"
+                        android:textSize="15sp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tvSoilMoisture"
+                        android:text="Moisture: -- m³/m³"
+                        android:textSize="15sp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- UV Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#1B5E20"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="☀️ UV Data"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/green"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tvUVIndex"
+                        android:text="UV Index: --"
+                        android:textSize="15sp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- NDVI Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#1B5E20"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext">
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="🍃 NDVI (Vegetation Index)"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/green"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:id="@+id/tvNDVIMean" android:text="Mean NDVI: --" android:textSize="15sp" android:textColor="@color/black" />
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:id="@+id/tvNDVIMedian" android:text="Median: --" android:textSize="15sp" android:textColor="@color/black" />
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:id="@+id/tvNDVIMin" android:text="Min: --" android:textSize="15sp" android:textColor="@color/black" />
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:id="@+id/tvNDVIMax" android:text="Max: --" android:textSize="15sp" android:textColor="@color/black" />
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:id="@+id/tvNDVICloud" android:text="Cloud Cover: --" android:textSize="15sp" android:textColor="@color/black" />
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:id="@+id/tvNDVIUsefulArea" android:text="Approx. useful area: --" android:textSize="15sp" android:textColor="@color/black" />
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:id="@+id/tvNDVIZoom" android:text="Zoom Level: --" android:textSize="15sp" android:textColor="@color/black" />
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:id="@+id/tvNDVISource" android:text="Source: --" android:textSize="15sp" android:textColor="@color/black" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Satellite Imagery Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#1B5E20"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_edittext">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🛰 Satellite Imagery"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/green"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/titleTrueColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="True Color Image"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/orange_500"
+                        android:layout_marginBottom="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imgTrueColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/titleFalseColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="False Color Image"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/orange_500"
+                        android:layout_marginBottom="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imgFalseColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/titleNDVI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NDVI Map"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/orange_500"
+                        android:layout_marginBottom="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imgNDVI"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/titleEVI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EVI Map"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/orange_500"
+                        android:layout_marginBottom="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imgEVI"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/titleEVI2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EVI2 Map"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/orange_500"
+                        android:layout_marginBottom="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imgEVI2"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/titleNRI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NRI Map"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/orange_500"
+                        android:layout_marginBottom="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imgNRI"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/titleDSWI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DSWI Map"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/orange_500"
+                        android:layout_marginBottom="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imgDSWI"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/titleNDWI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NDWI Map"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@color/orange_500"
+                        android:layout_marginBottom="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imgNDWI"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="6dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

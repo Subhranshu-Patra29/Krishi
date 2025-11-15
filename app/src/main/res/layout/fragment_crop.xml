@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matte_black"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Toggle Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnShowCrop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Crop Prediction"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/orange_500"
+                android:layout_marginEnd="8dp"
+                android:padding="12dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnShowDisease"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Disease Detection"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/orange_500"
+                android:padding="12dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Crop Prediction Section -->
+        <LinearLayout
+            android:id="@+id/layoutCropPrediction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_card"
+            android:padding="20dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crop Prediction"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Input fields -->
+            <EditText
+                android:id="@+id/etN"
+                android:hint="Nitrogen (N)"
+                style="@style/InputFieldStyle" />
+            <EditText
+                android:id="@+id/etP"
+                android:hint="Phosphorus (P)"
+                style="@style/InputFieldStyle" />
+            <EditText
+                android:id="@+id/etK"
+                android:hint="Potassium (K)"
+                style="@style/InputFieldStyle" />
+            <EditText
+                android:id="@+id/etTemperature"
+                android:hint="Temperature (°C)"
+                style="@style/InputFieldStyle" />
+            <EditText
+                android:id="@+id/etHumidity"
+                android:hint="Humidity (%)"
+                style="@style/InputFieldStyle" />
+            <EditText
+                android:id="@+id/etPh"
+                android:hint="Soil pH"
+                style="@style/InputFieldStyle" />
+            <EditText
+                android:id="@+id/etRainfall"
+                android:hint="Rainfall (mm)"
+                style="@style/InputFieldStyle" />
+
+            <Button
+                android:id="@+id/btnPredictCrop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Predict Crop"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green"
+                android:layout_marginTop="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/tvCropResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prediction will appear here"
+                android:textColor="#2E7D32"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
+                android:gravity="center"
+                android:background="@drawable/result_highlight_bg"
+                android:elevation="4dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <!-- Disease Detection Section -->
+        <LinearLayout
+            android:id="@+id/layoutDiseaseDetection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_card"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plant Disease Detection"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <ImageView
+                android:id="@+id/ivLeafImage"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/image_border"
+                android:scaleType="centerCrop"
+                android:contentDescription="Selected Leaf Image" />
+
+            <Button
+                android:id="@+id/btnSelectImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Image"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="12dp"
+                android:padding="12dp"/>
+
+            <Button
+                android:id="@+id/btnPredictDisease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Predict Disease"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp"
+                android:enabled="false" />
+
+            <TextView
+                android:id="@+id/tvPredictionResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prediction will appear here"
+                android:textColor="#2E7D32"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="12dp"
+                android:gravity="center"
+                android:background="@drawable/result_highlight_bg"
+                android:elevation="4dp"
+                android:visibility="visible"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

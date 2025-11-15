@@ -1,0 +1,100 @@
+plugins {
+//    alias(libs.plugins.android.application)
+    id 'com.android.application' version '8.13.1'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.subha.krishi'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.subha.krishi"
+        minSdk 31
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    // https://mvnrepository.com/artifact/com.google.firebase/firebase-auth
+    implementation("com.google.firebase:firebase-auth:24.0.1")
+
+    // https://mvnrepository.com/artifact/com.google.firebase/firebase-bom
+    implementation("com.google.firebase:firebase-bom:34.4.0")
+
+    // https://mvnrepository.com/artifact/com.google.firebase/firebase-analytics
+    implementation("com.google.firebase:firebase-analytics:23.0.0")
+
+    // https://mvnrepository.com/artifact/com.google.firebase/firebase-storage
+    implementation("com.google.firebase:firebase-storage:22.0.1")
+
+    // https://mvnrepository.com/artifact/com.google.firebase/firebase-firestore
+    implementation("com.google.firebase:firebase-firestore:26.0.2")
+
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
+    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+    implementation("com.squareup.okhttp3:okhttp:5.2.1")
+
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:5.2.1")
+
+    // https://mvnrepository.com/artifact/com.google.android.gms/play-services-location
+    implementation("com.google.android.gms:play-services-location:21.2.0")
+
+    // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
+    implementation("com.github.bumptech.glide:glide:5.0.5")
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+    // https://mvnrepository.com/artifact/com.squareup.picasso/picasso
+    implementation("com.squareup.picasso:picasso:2.71828")
+
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation("org.json:json:20250517")
+
+    // https://mvnrepository.com/artifact/com.airbnb.android/lottie
+    implementation("com.airbnb.android:lottie:6.6.10")
+
+    // https://mvnrepository.com/artifact/com.google.android.material/material
+    runtimeOnly("com.google.android.material:material:1.13.0")
+
+    // https://mvnrepository.com/artifact/com.facebook.soloader/soloader
+    implementation 'com.facebook.soloader:soloader:0.12.1'
+
+    // https://mvnrepository.com/artifact/com.facebook.fbjni/fbjni-java-only
+    runtimeOnly 'com.facebook.fbjni:fbjni-java-only:0.7.0'
+
+    // https://mvnrepository.com/artifact/com.android.volley/volley
+    implementation("com.android.volley:volley:1.2.1")
+
+    implementation(files("libs/pytorch_android-1.13.1.aar"))
+    implementation(files("libs/pytorch_android_torchvision-1.13.1.aar"))
+}

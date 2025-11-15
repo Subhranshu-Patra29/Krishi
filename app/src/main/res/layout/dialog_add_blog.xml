@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_card_bg"
+    android:padding="20dp">
+
+    <!-- Header Image -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/ivBlogImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_add_photo"
+            android:contentDescription="Add Blog Image"
+            android:background="@drawable/image_placeholder_bg"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Add a small overlay camera icon -->
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.7"/>
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/etAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Author Name"
+        android:background="@drawable/rounded_edittext"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Blog Title"
+        android:background="@drawable/rounded_edittext"
+        android:drawableStart="@drawable/ic_title"
+        android:drawablePadding="10dp"
+        android:padding="12dp"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/etDesc"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="Write your blog..."
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edittext" />
+</LinearLayout>
